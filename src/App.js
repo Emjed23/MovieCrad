@@ -18,7 +18,7 @@ const [Movie,setMovie]=useState(Data)
   }
 
   const [search, setSearch] = useState("")
-  const getSearch=(Search)=>{
+  const getSearch=(search)=>{
 setSearch(search)
   }
   const [rate, setRate] = useState("")
@@ -33,7 +33,7 @@ setRate(rate)
 
  <Header add={AddNewMovie}/>
  <Search getSearch={getSearch} getRate={getRate}/>
-<Movielist  Movie={Movie}/>
+<Movielist  Movie={Movie} search={search} rate={rate}/>
 </body>
   </div>
    );

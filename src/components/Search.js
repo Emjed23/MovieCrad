@@ -33,7 +33,7 @@ const Search = ({getSearch,getRate}) => {
               aria-label="Search"
               onChange={(e)=>getSearch(e.target.value)}
             />
-            <Button variant="outline-success">Search </Button>
+            <Button variant="primary" >Search </Button>
           </Form>
         </Navbar.Collapse>
       </Container>
