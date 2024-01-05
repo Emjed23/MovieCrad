@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
+import React from 'react';
+import Header from './components/Header';
+import { useState } from 'react';
+import Movielist from './components/MovieList';
+import { Data } from './Data';
+import Search from './components/Search';
+
+
+
+function App(){
+
+const [Movie,setMovie]=useState(Data)
+  const AddNewMovie=(newMovie)=>{
+    setMovie([...Movie,newMovie])
+  }
+
+  const [search, setSearch] = useState("")
+  const getSearch=(Search)=>{
+setSearch(search)
+  }
+  const [rate, setRate] = useState("")
+  const getRate=(rate)=>{
+setRate(rate)
+  }
+  console.log(rate)
+  
+  return ( 
+  <div>
+    <body>
+
+ <Header add={AddNewMovie}/>
+ <Search getSearch={getSearch} getRate={getRate}/>
+<Movielist  Movie={Movie}/>
+</body>
+  </div>
+   );
 }
 
 export default App;
