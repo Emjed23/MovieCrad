@@ -6,7 +6,11 @@ import Header from './components/Header';
 import { useState } from 'react';
 import Movielist from './components/MovieList';
 import { Data } from './Data';
-import Search from './components/Search';
+import Trailer from './components/Trailer';
+import Home from './components/Home';
+import { Route, Routes } from "react-router-dom";
+
+
 
 
 
@@ -31,9 +35,15 @@ setRate(rate)
   <div>
     <body>
 
- <Header add={AddNewMovie}/>
- <Search getSearch={getSearch} getRate={getRate}/>
-<Movielist  Movie={Movie} search={search} rate={rate}/>
+ <Header add={AddNewMovie} />
+ {/* <NavigationBar getSearch={getSearch} getRate={getRate} /> */}
+ {/* <Search getSearch={getSearch} getRate={getRate}/>
+<Movielist  Movie={Movie} search={search} rate={rate}/>  */}
+ <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/MovieList" element={<Movielist Movie={Movie} search={search} rate={rate} />}/>
+        <Route path="/movie/:id" element={ <Trailer Movie={Movie} /> } />
+      </Routes>
 </body>
   </div>
    );

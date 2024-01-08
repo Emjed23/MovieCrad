@@ -1,6 +1,8 @@
 import React from 'react'
 import Card from 'react-bootstrap/Card';
 import ReactStars from 'react-stars';
+import { LinkContainer } from 'react-router-bootstrap'
+import { Button } from 'react-bootstrap'
 
 const MovieCards = ({Movie}) => {
   return (
@@ -8,7 +10,11 @@ const MovieCards = ({Movie}) => {
     <Card style={{ width: '25rem' , height:'25rem '}}>
       <Card.Body>
         <Card.Title>{Movie.title}</Card.Title>
-        <Card.Img variant ="top" src={Movie.posterUrl}/>
+
+        <Card.Img variant ="top" src={Movie.posterUrl}/>    
+        <LinkContainer to={`/movie/${Movie.id}`} >
+        <Button variant="primary">Trailer</Button>
+</LinkContainer>
         <ReactStars className='rating'
   count={5}
   value={Movie.rate}
