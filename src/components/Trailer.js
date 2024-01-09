@@ -15,13 +15,9 @@ const Trailer = ({Movie}) => {
      className=""
      display="block"
      margin-top='60 px'
-    //  position="center"
-    
-     justify-content='center' >  </Iframe>
+     justify-content='center' >  
+     </Iframe>
     </div>
   )
 }
 export default Trailer
-// }
-//  width='1280' height='720'
-// export default Trailer

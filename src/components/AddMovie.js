@@ -6,7 +6,6 @@ import { Button} from 'react-bootstrap';
 
 
   const AddMovie = ({ add}) => {
-  // modal show/ hide
 
   const [show, setShow] = useState(false);
   const toggle = () => {

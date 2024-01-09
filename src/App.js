@@ -9,13 +9,9 @@ import { Data } from './Data';
 import Trailer from './components/Trailer';
 import Home from './components/Home';
 import { Route, Routes } from "react-router-dom";
-
-
-
-
+import Search from './components/Search';
 
 function App(){
-
 const [Movie,setMovie]=useState(Data)
   const AddNewMovie=(newMovie)=>{
     setMovie([...Movie,newMovie])
@@ -35,10 +31,10 @@ setRate(rate)
   <div>
     <body>
 
- <Header add={AddNewMovie} />
+    <Header add={AddNewMovie} />
  {/* <NavigationBar getSearch={getSearch} getRate={getRate} /> */}
- {/* <Search getSearch={getSearch} getRate={getRate}/>
-<Movielist  Movie={Movie} search={search} rate={rate}/>  */}
+ <Search getSearch={getSearch} getRate={getRate}/>
+{/* <Movielist  Movie={Movie} search={search} rate={rate}/>   */}
  <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/MovieList" element={<Movielist Movie={Movie} search={search} rate={rate} />}/>

@@ -32,6 +32,7 @@ const Header = ({add}) => {
   <h1 className='title'>Movie List</h1>
 <AddMovie add={add} />
 </div>
+
 </div>
     );
 }
